@@ -1,0 +1,29 @@
+﻿@page
+@model subscription.Pages.sasaModel
+@{
+}
+<form method="post">
+    <div>
+        <label for="emailInput">Email: </label>
+        <input style="border: 2px solid black; border-radius: 5px;" type="email" id="emailInput" name="email" required />
+    </div>
+    <div>
+        <input type="checkbox" id="subscribeCheckbox" name="subscribe" />
+        <label for="subscribeCheckbox">Subscribe</label>
+    </div>
+    <button style="border: none; border-radius: 5px;" type="button" id="sendButton">Send</button>
+</form>
+<script>
+    document.getElementById('sendButton').addEventListener('click', function () 
+    {
+        var subscribeCheckbox = document.getElementById('subscribeCheckbox');
+        if (subscribeCheckbox.checked) 
+        {
+            alert('Thank you for subscribing');
+        } 
+        else 
+        {
+            location.reload();
+        }
+    });
+</script>
